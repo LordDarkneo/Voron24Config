@@ -1,7 +1,7 @@
 [server]
 host: 0.0.0.0
 port: 7125
-klippy_uds_address: /home/orangepi/printer_data/comms/klippy.sock
+klippy_uds_address: /home/darkneo/printer_data/comms/klippy.sock
 
 [authorization]
 trusted_clients:
@@ -41,12 +41,14 @@ channel: stable
 repo: fluidd-core/fluidd
 path: ~/fluidd
 
-[update_manager mobileraker]
+[update_manager z_calibration]
 type: git_repo
-path: /home/orangepi/mobileraker_companion
-origin: https://github.com/Clon1998/mobileraker_companion.git
-primary_branch:main
-managed_services: mobileraker
-env: /home/orangepi/mobileraker-env/bin/python
-requirements: scripts/mobileraker-requirements.txt
-install_script: scripts/install-mobileraker-companion.sh
+path: /home/darkneo/klipper_z_calibration
+origin: https://github.com/protoloft/klipper_z_calibration.git
+managed_services: klipper
+
+[file_manager]
+enable_object_processing: True
+
+
+[include moonraker-obico-update.cfg]
